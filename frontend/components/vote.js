@@ -162,6 +162,7 @@ export default function Vote() {
               <a
                 href="https://www.patreon.com/BiggerThanRace/"
                 target="_blank"
+                rel="noreferrer"
                 className="px-2 py-1 text-black font-semibold bg-pink-600 hover:bg-black hover:text-pink-600 cursor-pointer"
               >
                 JOIN THE BTR COMMUNITY

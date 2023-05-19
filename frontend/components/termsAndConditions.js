@@ -19,8 +19,8 @@ export default function TermsAndConditions() {
             could lose 100% of your original investment
           </p>
           <p>
-            If any token/project doesn't perform well and you receive a loss,
-            the responsibility is YOURS alone
+            If any token/project doesn&apos;t perform well and you receive a
+            loss, the responsibility is YOURS alone
           </p>
           <p>
             Bigger Than Race are in no way responsible for any losses incurred

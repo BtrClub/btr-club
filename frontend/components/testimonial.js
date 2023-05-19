@@ -18,8 +18,8 @@ export default function Testimonial() {
           </svg>
           <blockquote>
             <p className="text-2xl font-medium text-gray-900">
-              "BTR is a community of individuals that support eachother every
-              step in the journey, while making money together."
+              &quot;BTR is a community of individuals that support eachother
+              every step in the journey, while making money together.&quot;
             </p>
           </blockquote>
           <figcaption className="flex items-center justify-center mt-6 space-x-3">
