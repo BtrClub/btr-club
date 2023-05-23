@@ -7,7 +7,7 @@ import VotingSquares from "../public/assets/icons/votingSquares.png";
 export default function Explainer() {
   return (
     <section className="pb-20">
-      <section className="text-white pt-10 grid rid-cols-1 md:grid-cols-3 gap-3">
+      <section className="text-white text-center pt-10 grid rid-cols-1 md:grid-cols-3 gap-3">
         <section className="flex flex-col items-center pb-10">
           <Image src={Proposal} alt="Proposal" width="110" height="110" />
           <p className="pt-2 text-2xl">Have an NFT to create proposals</p>
