@@ -25,7 +25,7 @@ export default function Values() {
           <p className="pt-2 text-2xl">Educational</p>
           <p className="pt-4 w-2/3 text-lg text-center">
             We are an educated community and we expect every community member to
-            help eachother with questions and taking learning seriously. The
+            help each other with questions and taking learning seriously. The
             more knowledge we have, the bigger achievements.
           </p>
         </section>
