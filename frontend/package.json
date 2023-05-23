@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@rainbow-me/rainbowkit": "^0.7.4",
+    "@web3uikit/core": "^1.0.6",
     "@web3uikit/icons": "^0.3.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.1",
