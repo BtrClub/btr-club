@@ -61,8 +61,9 @@ export default function Description() {
         <p>
           We believe that the BTR Investment Club has the potential to achieve
           remarkable milestones as an investment community. By collectively
-          managing the investment club's treasury, we can pool our resources and
-          expertise to maximise the growth and success of our investments.
+          managing the investment club&apos;s treasury, we can pool our
+          resources and expertise to maximise the growth and success of our
+          investments.
         </p>
         <br />
         <p>
@@ -80,7 +81,7 @@ export default function Description() {
         </p>
         <br />
         <p>
-          Together, let's unlock the full potential of our collective
+          Together, let&apos;s unlock the full potential of our collective
           intelligence and drive the BTR Investment Club to new heights!
         </p>
         <br />
@@ -111,13 +112,13 @@ export default function Description() {
         <p>
           Note: The Investment Club operates within the framework of mutual
           trust, transparency, and responsibility. All investment decisions are
-          subject to the club's guidelines and protocols to ensure the best
+          subject to the club&apos;s guidelines and protocols to ensure the best
           interests of our members.
         </p>
         <br />
         <p>
-          Let's embark on this exciting journey of collective investment and
-          make a lasting impact in the blockchain space!
+          Let&apos;s embark on this exciting journey of collective investment
+          and make a lasting impact in the blockchain space!
         </p>
         <br />
         <p>- The BTR Investment Club</p>
