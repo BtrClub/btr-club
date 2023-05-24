@@ -7,11 +7,11 @@ import youtube from "../public/assets/icons/youtube.png";
 import blog from "../public/assets/icons/blog.png";
 import website from "../public/assets/icons/code.png";
 import telegram from "../public/assets/icons/telegram.png";
-import resources from "../public/assets/icons/more.png";
+import discord from "../public/assets/icons/discord.png";
 
 export default function Community() {
   return (
-    <section className="w-full text-center bg-white pt-40">
+    <section className="w-full text-center bg-black pt-40">
       <section className="max-w-[1240px] h-96 mx-auto p-2 flex flex-col justify-center items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <h1>Join the BTR Community</h1>
       </section>
@@ -19,7 +19,7 @@ export default function Community() {
         <Link
           href="https://www.youtube.com/c/BiggerThanRace"
           target="_blank"
-          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-700 text-gray-900 hover:shadow-lg"
+          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-200 text-gray-300 hover:shadow-lg hover:shadow-slate-700"
         >
           <section className="w-full flex items-center justify-between">
             <section className="flex items-center">
@@ -38,7 +38,7 @@ export default function Community() {
         <Link
           href="https://biggerthanrace.com/blog"
           target="_blank"
-          className="h-24 flex items-center p-6 col-start-7 col-span-5 border-2 rounded border-gray-700 text-gray-900 hover:shadow-lg"
+          className="h-24 flex items-center p-6 col-start-7 col-span-5 border-2 rounded border-gray-200 text-gray-300 hover:shadow-lg hover:shadow-slate-700"
         >
           <section className="w-full flex items-center justify-between">
             <section className="flex items-center">
@@ -57,7 +57,7 @@ export default function Community() {
         <Link
           href="https://www.patreon.com/BiggerThanRace/"
           target="_blank"
-          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-700 text-gray-900 hover:shadow-lg"
+          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-200 text-gray-300 hover:shadow-lg hover:shadow-slate-700"
         >
           <section className="w-full flex items-center justify-between">
             <section className="flex items-center">
@@ -76,7 +76,7 @@ export default function Community() {
         <Link
           href="https://biggerthanrace.com/"
           target="_blank"
-          className="h-24 flex items-center p-6 col-start-7 col-span-5 border-2 rounded border-gray-700 text-gray-900 hover:shadow-lg"
+          className="h-24 flex items-center p-6 col-start-7 col-span-5 border-2 rounded border-gray-200 text-gray-300 hover:shadow-lg hover:shadow-slate-700"
         >
           <section className="w-full flex items-center justify-between">
             <section className="flex items-center">
@@ -93,20 +93,20 @@ export default function Community() {
           </section>
         </Link>
         <Link
-          href="https://www.youtube.com/c/BiggerThanRace"
+          href="https://discord.gg/XDb7dtxxV4"
           target="_blank"
-          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-700 text-gray-900 hover:shadow-lg"
+          className="h-24 flex items-center p-6 col-start-2 col-span-5 border-2 rounded border-gray-200 text-gray-300 hover:shadow-lg hover:shadow-slate-700"
         >
           <section className="w-full flex items-center justify-between">
             <section className="flex items-center">
               <Image
-                src={resources}
-                alt="resources"
+                src={discord}
+                alt="discord"
                 width="35"
                 height="35"
                 className="mr-4"
               />
-              <p>Resources/Guides</p>
+              <p>Link to discord</p>
             </section>
             <Image src={arrow} alt="arrow" width="25" height="25" />
           </section>
