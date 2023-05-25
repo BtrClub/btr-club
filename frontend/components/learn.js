@@ -262,7 +262,7 @@ export default function Learn() {
                     decision-making, and it does not provide personalized
                     investment advice or financial recommendations. Members are
                     encouraged to do their own research and seek professional
-                    advice before making any investment decisions..
+                    advice before making any investment decisions.
                   </p>
                 </section>
                 <section className="mb-10">
