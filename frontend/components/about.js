@@ -14,7 +14,7 @@ export default function About() {
             a collective effort aimed at pooling our resources and leveraging
             the power of NFT voting to make informed investment decisions. By
             joining forces, we can potentially generate residual income and
-            unlock future benefits for all club members.
+            unlock future benefits for all club members..
           </p>
           <br />
           <p>
