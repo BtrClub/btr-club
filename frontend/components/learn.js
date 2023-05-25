@@ -582,16 +582,16 @@ export default function Learn() {
                       serves as the Managing Partner and Investment Director at
                       "Bigger Than Race". He is responsible for sourcing and
                       evaluating investment opportunities, conducting due
-                      diligence, negotiating deal terms, managing the firm's
-                      portfolio of investments, and supporting portfolio
-                      companies' growth and success.
+                      diligence, negotiating deal terms, managing the
+                      firm&apos;s portfolio of investments, and supporting
+                      portfolio companies&apos; growth and success.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">3.</span> Sparks Flames serves
                       as the Lead Community Manager at "Bigger Than Race" with 3
                       years of experience. She is responsible for managing the
-                      firm's Discord community and ensuring her team of
+                      firm&apos;s Discord community and ensuring her team of
                       moderators is engaging with investors and entrepreneurs.
                     </li>
                   </ul>
@@ -795,7 +795,7 @@ export default function Learn() {
                       Sustainable Blockchain Solutions: We invest in projects
                       that are committed to developing environmentally friendly
                       and sustainable blockchain solutions, reducing the
-                      industry's carbon footprint and promoting responsible
+                      industry&apos;s carbon footprint and promoting responsible
                       growth.
                     </li>
                     <br />
@@ -844,10 +844,10 @@ export default function Learn() {
                     <li>
                       <span className="font-bold">4.</span> Use Cases: We
                       evaluate the practical applications and real-world value a
-                      project can bring, assessing how the project's technology,
-                      products, or services can address specific problems or
-                      needs and create tangible benefits for its users,
-                      customers, or stakeholders.
+                      project can bring, assessing how the project&apos;s
+                      technology, products, or services can address specific
+                      problems or needs and create tangible benefits for its
+                      users, customers, or stakeholders.
                     </li>
                   </ul>
                 </section>
@@ -865,38 +865,40 @@ export default function Learn() {
                     <li>
                       <span className="font-bold">2.</span> Market Potential: We
                       analyze the potential market size and target audience for
-                      the project's solution, taking into account industry
+                      the project&apos;s solution, taking into account industry
                       trends, demographics, and the competitive landscape.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">3.</span> Monetization: We
-                      examine the project's potential revenue streams and
+                      examine the project&apos;s potential revenue streams and
                       business model, ensuring they are sustainable and aligned
-                      with the project's goals and objectives.
+                      with the project&apos;s goals and objectives.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">4.</span> Regulatory and Legal
                       Aspects: We investigate any regulatory or legal challenges
                       that the project may face in implementing its solution and
-                      assess the project's plans for addressing these issues.
+                      assess the project&apos;s plans for addressing these
+                      issues.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">5.</span> Team and
                       Partnerships: We evaluate the experience, expertise, and
-                      track record of the project's management team, as well as
-                      any strategic partnerships that can contribute to the
-                      project's growth and success.
+                      track record of the project&apos;s management team, as
+                      well as any strategic partnerships that can contribute to
+                      the project&apos;s growth and success.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">6.</span> Roadmap and
-                      Development Progress: We review the project's development
-                      roadmap and assess the progress made in achieving its
-                      milestones and goals, considering factors such as product
-                      releases, updates, and community engagement.
+                      Development Progress: We review the project&apos;s
+                      development roadmap and assess the progress made in
+                      achieving its milestones and goals, considering factors
+                      such as product releases, updates, and community
+                      engagement.
                     </li>
                     <br />
                   </ul>
@@ -1026,18 +1028,18 @@ export default function Learn() {
                   leadership in the investment world, where investors are
                   respected for their wisdom, experience, and strategic vision.
                   The General NFT could feature a senior officer wearing a full
-                  dress uniform, symbolizing the investor's distinguished career
-                  and achievements in the financial industry. With Priority
-                  Access to tier one seed and Private Sales, this NFT offers
-                  access to the ground level for the most promising crypto and
-                  NFT projects long before they launch to the public. High
-                  personal allocations for every sale, up to $5,000 for each
-                  seed/Private sale, allowing significant investment to maximize
-                  the ROI, and guaranteed allocations. Tier 1 NFTs will increase
-                  in price by $200 for every 20 sold. Limited circulation with
-                  only 150 NFTs available. Starting at $1,800 per NFT. As part
-                  of the referral program, Tier 1 offers a $100 referral fee for
-                  each General NFT sold.
+                  dress uniform, symbolizing the investor&apos;s distinguished
+                  career and achievements in the financial industry. With
+                  Priority Access to tier one seed and Private Sales, this NFT
+                  offers access to the ground level for the most promising
+                  crypto and NFT projects long before they launch to the public.
+                  High personal allocations for every sale, up to $5,000 for
+                  each seed/Private sale, allowing significant investment to
+                  maximize the ROI, and guaranteed allocations. Tier 1 NFTs will
+                  increase in price by $200 for every 20 sold. Limited
+                  circulation with only 150 NFTs available. Starting at $1,800
+                  per NFT. As part of the referral program, Tier 1 offers a $100
+                  referral fee for each General NFT sold.
                 </p>
                 <br />
                 <p>
@@ -1046,7 +1048,7 @@ export default function Learn() {
                   the most advanced techniques and strategies for success. The
                   Special Forces NFT could feature a Soldier wearing the
                   insignia of a top-secret special operations unit, symbolizing
-                  the investor's exceptional skill and expertise. With NFT
+                  the investor&apos;s exceptional skill and expertise. With NFT
                   Utility, this tier offers top-tier projects strictly vetted by
                   the Cryptopia VC before being offered first come first served
                   personal allocations up to $750 per holder in every sale, and
@@ -1063,14 +1065,14 @@ export default function Learn() {
                   towards the BTR Investment Club, exclusively for the first 100
                   combination of Tier 1 and Tier 2 NFT holders. The Investment
                   Club will grant members voting rights and fund innovative DeFi
-                  projects and initiatives that align with BTR's mission of
+                  projects and initiatives that align with BTR&apos;s mission of
                   promoting financial freedom for all. By investing in Bigger
-                  Than Race's BTR Army NFT Pass, you'll not only gain access to
-                  unique investment opportunities and exclusive perks, but
-                  you'll also be contributing to the growth of decentralized
-                  finance and supporting the development of the next generation.
-                  So join us today in supporting this exciting initiative and
-                  making a difference in the world of finance.
+                  Than Race&apos;s BTR Army NFT Pass, you&apos;ll not only gain
+                  access to unique investment opportunities and exclusive perks,
+                  but you&apos;ll also be contributing to the growth of
+                  decentralized finance and supporting the development of the
+                  next generation. So join us today in supporting this exciting
+                  initiative and making a difference in the world of finance.
                 </p>
               </section>
             </section>
@@ -1086,7 +1088,9 @@ export default function Learn() {
                   compliance and transparency.
                 </p>
                 <br />
-                <p className="text-lg">Firm's position on regulatory issues:</p>
+                <p className="text-lg">
+                  Firm&apos;s position on regulatory issues:
+                </p>
                 <br />
                 <p>
                   We believe that a clear regulatory framework is necessary for
@@ -1273,10 +1277,10 @@ export default function Learn() {
                     <br />
                     <li>
                       <span className="font-bold">11.</span> White paper: A
-                      detailed document that outlines a project or company's
-                      vision, goals, and strategies, often used in the crypto
-                      and blockchain space to communicate technical information
-                      and potential value to investors.
+                      detailed document that outlines a project or
+                      company&apos;s vision, goals, and strategies, often used
+                      in the crypto and blockchain space to communicate
+                      technical information and potential value to investors.
                     </li>
                     <br />
                     <li>
@@ -1430,10 +1434,10 @@ export default function Learn() {
                 </p>
                 <br />
                 <p>
-                  We take the protection of our investors' and portfolio
-                  companies' personal and financial information seriously and
-                  have implemented strict data protection and security measures
-                  to ensure the confidentiality and integrity of this
+                  We take the protection of our investors&apos; and portfolio
+                  companies&apos; personal and financial information seriously
+                  and have implemented strict data protection and security
+                  measures to ensure the confidentiality and integrity of this
                   information.
                 </p>
               </section>
