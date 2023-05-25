@@ -113,7 +113,7 @@ export default function Description() {
           Note: The Investment Club operates within the framework of mutual
           trust, transparency, and responsibility. All investment decisions are
           subject to the club&apos;s guidelines and protocols to ensure the best
-          interests of our members..
+          interests of our members.
         </p>
         <br />
         <p>
