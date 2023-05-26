@@ -449,23 +449,23 @@ export default function Learn() {
               </p>
               <br />
               <p>
-                At "Bigger Than Race", we believe that the crypto industry has
-                the potential to create a more inclusive and equitable world,
-                and we are committed to investing in and supporting the most
-                promising projects and initiatives in this space. Our mission is
-                to identify and invest in disruptive technologies and innovative
-                projects that have the potential to transform the crypto
-                industry and create long-term value for our investors and
-                portfolio companies.
+                At &quot;Bigger Than Race&quot;, we believe that the crypto
+                industry has the potential to create a more inclusive and
+                equitable world, and we are committed to investing in and
+                supporting the most promising projects and initiatives in this
+                space. Our mission is to identify and invest in disruptive
+                technologies and innovative projects that have the potential to
+                transform the crypto industry and create long-term value for our
+                investors and portfolio companies.
               </p>
               <br />
               <p>
                 Our vision is to be a leading crypto venture capital firm that
                 drives positive change and empowers underserved communities
-                around the world. We believe that the crypto industry is "bigger
-                than race" and that it has the power to transcend cultural and
-                geographic boundaries to create a more connected and prosperous
-                world.
+                around the world. We believe that the crypto industry is
+                &quot;bigger than race&quot; and that it has the power to
+                transcend cultural and geographic boundaries to create a more
+                connected and prosperous world.
               </p>
               <br />
               <p>
@@ -498,13 +498,13 @@ export default function Learn() {
               <h4>Investment Philosophy</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", we differentiate ourselves from other
-                  crypto venture capital firms by focusing on the intersection
-                  of technology and social impact. Our investment philosophy is
-                  rooted in our belief that the crypto industry has the power to
-                  create a more equitable and sustainable world, and we seek to
-                  invest in projects and initiatives that align with this
-                  vision.
+                  At &quot;Bigger Than Race&quot;, we differentiate ourselves
+                  from other crypto venture capital firms by focusing on the
+                  intersection of technology and social impact. Our investment
+                  philosophy is rooted in our belief that the crypto industry
+                  has the power to create a more equitable and sustainable
+                  world, and we seek to invest in projects and initiatives that
+                  align with this vision.
                 </p>
                 <br />
                 <p>
@@ -549,9 +549,9 @@ export default function Learn() {
               <h4>Management Team</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", we have assembled a highly experienced
-                  and diverse management team with a range of skills and
-                  expertise in the crypto and blockchain space. Our team is
+                  At &quot;Bigger Than Race&quot;, we have assembled a highly
+                  experienced and diverse management team with a range of skills
+                  and expertise in the crypto and blockchain space. Our team is
                   committed to driving innovation and creating value for our
                   investors and portfolio companies, and we work closely with
                   our partners to support their growth and success.
@@ -562,16 +562,16 @@ export default function Learn() {
                 <section>
                   <ul>
                     <li>
-                      <span className="font-bold">1.</span> Brando "The Crypto
-                      Wizard" Murphy is the Founder of "Bigger Than Race". He is
-                      a veteran of the crypto world. Brando started
-                      investigating cryptocurrency in 2016, which led to the
-                      famous 2017 bull market. His qualifications include
-                      Certification in Web3/Metaverse through EveryRealm, a
-                      venture fund and leader in Metaverse innovation and
-                      development, and Certified in Blockchain and Bitcoin
-                      through IBM. His primary vision and goal are to help
-                      people become financially free through Blockchain
+                      <span className="font-bold">1.</span> Brando &quot;The
+                      Crypto Wizard&quot; Murphy is the Founder of &quot;Bigger
+                      Than Race&quot;. He is a veteran of the crypto world.
+                      Brando started investigating cryptocurrency in 2016, which
+                      led to the famous 2017 bull market. His qualifications
+                      include Certification in Web3/Metaverse through
+                      EveryRealm, a venture fund and leader in Metaverse
+                      innovation and development, and Certified in Blockchain
+                      and Bitcoin through IBM. His primary vision and goal are
+                      to help people become financially free through Blockchain
                       technology and to be able to invest and own the
                       infrastructure of the new economy of the 4th Industrial
                       Revolution. His passion is very noticeable.
@@ -580,19 +580,20 @@ export default function Learn() {
                     <li>
                       <span className="font-bold">2.</span> Shawn P. Campbell
                       serves as the Managing Partner and Investment Director at
-                      "Bigger Than Race". He is responsible for sourcing and
-                      evaluating investment opportunities, conducting due
-                      diligence, negotiating deal terms, managing the
-                      firm&apos;s portfolio of investments, and supporting
+                      &quot;Bigger Than Race&quot;. He is responsible for
+                      sourcing and evaluating investment opportunities,
+                      conducting due diligence, negotiating deal terms, managing
+                      the firm&apos;s portfolio of investments, and supporting
                       portfolio companies&apos; growth and success.
                     </li>
                     <br />
                     <li>
                       <span className="font-bold">3.</span> Sparks Flames serves
-                      as the Lead Community Manager at "Bigger Than Race" with 3
-                      years of experience. She is responsible for managing the
-                      firm&apos;s Discord community and ensuring her team of
-                      moderators is engaging with investors and entrepreneurs.
+                      as the Lead Community Manager at &quot;Bigger Than
+                      Race&quot; with 3 years of experience. She is responsible
+                      for managing the firm&apos;s Discord community and
+                      ensuring her team of moderators is engaging with investors
+                      and entrepreneurs.
                     </li>
                   </ul>
                 </section>
@@ -613,7 +614,7 @@ export default function Learn() {
                   dedicated to supporting the growth and success of our
                   partners, and we are proud to have such a talented and
                   experienced group of individuals working together to advance
-                  the mission of "Bigger Than Race".
+                  the mission of &quot;Bigger Than Race&quot;.
                 </p>
               </section>
             </section>
@@ -621,12 +622,12 @@ export default function Learn() {
               <h4>Investment Process</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", our investment process is designed to
-                  identify and invest in the most promising crypto projects and
-                  startups while minimizing risk and maximizing returns for our
-                  investors. Our investment process consists of three key
-                  stages: deal sourcing and pipeline management, due diligence
-                  and evaluation, investment terms and structure, and
+                  At &quot;Bigger Than Race&quot;, our investment process is
+                  designed to identify and invest in the most promising crypto
+                  projects and startups while minimizing risk and maximizing
+                  returns for our investors. Our investment process consists of
+                  three key stages: deal sourcing and pipeline management, due
+                  diligence and evaluation, investment terms and structure, and
                   post-investment services.
                 </p>
                 <br />
@@ -677,13 +678,14 @@ export default function Learn() {
                 <p className="font-bold">Post-investment services:</p>
                 <br />
                 <p>
-                  At "Bigger Than Race", we believe that our investment process
-                  does not end with the investment decision. We provide ongoing
-                  support to our portfolio companies by tracking their progress
-                  before, during, and after the investment. We work closely with
-                  the management team to ensure that they have the resources and
-                  expertise they need to achieve their goals and overcome any
-                  challenges that may arise.
+                  At &quot;Bigger Than Race&quot;, we believe that our
+                  investment process does not end with the investment decision.
+                  We provide ongoing support to our portfolio companies by
+                  tracking their progress before, during, and after the
+                  investment. We work closely with the management team to ensure
+                  that they have the resources and expertise they need to
+                  achieve their goals and overcome any challenges that may
+                  arise.
                 </p>
                 <br />
                 <p>
@@ -710,12 +712,12 @@ export default function Learn() {
               <h4>Portfolio and Performance</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", we have assembled a diverse portfolio
-                  of crypto projects and startups that are at the forefront of
-                  innovation in the blockchain and crypto space. Our portfolio
-                  consists of companies that operate in various sectors,
-                  including AI, Metaverse, Web 3, P2E Gaming, Social, and Node
-                  projects.
+                  At &quot;Bigger Than Race&quot;, we have assembled a diverse
+                  portfolio of crypto projects and startups that are at the
+                  forefront of innovation in the blockchain and crypto space.
+                  Our portfolio consists of companies that operate in various
+                  sectors, including AI, Metaverse, Web 3, P2E Gaming, Social,
+                  and Node projects.
                 </p>
                 <br />
                 <p>
@@ -917,12 +919,12 @@ export default function Learn() {
               <h4>Value Proposition for Crypto Startups and Entrepreneurs</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", we are committed to providing value to
-                  our portfolio companies beyond just financial investment. We
-                  work closely with our portfolio companies to provide strategic
-                  guidance, access to our extensive network of industry contacts
-                  and partners, and a range of support and resources to help
-                  them achieve their goals.
+                  At &quot;Bigger Than Race&quot;, we are committed to providing
+                  value to our portfolio companies beyond just financial
+                  investment. We work closely with our portfolio companies to
+                  provide strategic guidance, access to our extensive network of
+                  industry contacts and partners, and a range of support and
+                  resources to help them achieve their goals.
                 </p>
                 <br />
                 <p className="text-lg">
@@ -976,12 +978,13 @@ export default function Learn() {
                 </p>
                 <br />
                 <p>
-                  At "Bigger Than Race", we have established partnerships and
-                  affiliations with leading blockchain protocols, incubators,
-                  and academic institutions. These partnerships and affiliations
-                  enable us to stay at the forefront of innovation in the crypto
-                  and blockchain space and provide our portfolio companies with
-                  access to the latest technologies, research, and resources.
+                  At &quot;Bigger Than Race&quot;, we have established
+                  partnerships and affiliations with leading blockchain
+                  protocols, incubators, and academic institutions. These
+                  partnerships and affiliations enable us to stay at the
+                  forefront of innovation in the crypto and blockchain space and
+                  provide our portfolio companies with access to the latest
+                  technologies, research, and resources.
                 </p>
                 <br />
                 <p className="text-lg">
@@ -1160,10 +1163,10 @@ export default function Learn() {
               <h4>Conclusion and Outlook:</h4>
               <section className="text-sm mt-4">
                 <p>
-                  At "Bigger Than Race", we are committed to building a better
-                  future through strategic investments in innovative crypto and
-                  blockchain projects. Our investment philosophy is centered
-                  around providing value beyond just financial capital,
+                  At &quot;Bigger Than Race&quot;, we are committed to building
+                  a better future through strategic investments in innovative
+                  crypto and blockchain projects. Our investment philosophy is
+                  centered around providing value beyond just financial capital,
                   leveraging our industry expertise, extensive network, and
                   range of support and resources to help our portfolio companies
                   succeed.
@@ -1192,8 +1195,8 @@ export default function Learn() {
                 <p>
                   If you are a crypto startup or entrepreneur looking for a
                   strategic partner and investor, we invite you to reach out and
-                  learn more about how "Bigger Than Race" can help you achieve
-                  your goals. And if you are an investor looking for an
+                  learn more about how &quot;Bigger Than Race&quot; can help you
+                  achieve your goals. And if you are an investor looking for an
                   experienced and innovative partner in the crypto and
                   blockchain space, we invite you to join us on this exciting
                   journey. Together, we can build a better future that is bigger

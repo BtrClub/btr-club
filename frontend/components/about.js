@@ -40,7 +40,7 @@ export default function About() {
           <section className="text-center py-2 text-black font-semibold bg-pink-600">
             NOTHING WE SAY, DO, OR PRESENT IS EVER FINANCIAL ADVICE.
             <br />
-            PLEASE, ALWAYS DO YOUR OWN RESEARCH
+            PLEASE, ALWAYS DO YOUR OWN RESEARCH.
           </section>
           <br />
           <p>
