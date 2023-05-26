@@ -1083,12 +1083,12 @@ export default function Learn() {
               <h4>Regulatory Environment and Compliance:</h4>
               <section className="text-sm mt-4">
                 <p>
-                  Bigger Than Race", we recognize the importance of complying
-                  with regulatory requirements and ensuring the safety and
-                  security of our investors and portfolio companies. We closely
-                  monitor regulatory developments in the crypto and blockchain
-                  space and strive to maintain the highest standards of
-                  compliance and transparency.
+                  &apos;Bigger Than Race&apos;, we recognize the importance of
+                  complying with regulatory requirements and ensuring the safety
+                  and security of our investors and portfolio companies. We
+                  closely monitor regulatory developments in the crypto and
+                  blockchain space and strive to maintain the highest standards
+                  of compliance and transparency.
                 </p>
                 <br />
                 <p className="text-lg">
