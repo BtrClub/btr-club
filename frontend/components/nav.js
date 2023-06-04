@@ -53,24 +53,38 @@ export default function Nav() {
             </section>
             <ul className="flex flex-col items-center justify-between min-h-[250px]">
               <li className="border-b border-gray-400 my-8 uppercase">
-                <Link href="/learn">Learn</Link>
+                <Link
+                  href="/learn"
+                  onClick={() => setIsNavOpen((prev) => !prev)}
+                >
+                  Learn
+                </Link>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
-                <Link href="/about">About</Link>
+                <Link
+                  href="/about"
+                  onClick={() => setIsNavOpen((prev) => !prev)}
+                >
+                  About
+                </Link>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
-                <Link href="/community">Community</Link>
+                <Link
+                  href="/community"
+                  onClick={() => setIsNavOpen((prev) => !prev)}
+                >
+                  Community
+                </Link>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
-                <Link href="/vote">Vote</Link>
-              </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <Link href="/community">Community</Link>
+                <Link
+                  href="/vote"
+                  onClick={() => setIsNavOpen((prev) => !prev)}
+                >
+                  Vote
+                </Link>
               </li>
             </ul>
-            {/* <section className="ml-4 sm:ml-10 text-xs sm:text-sm uppercase">
-              <ConnectButton />
-            </section> */}
           </section>
         </section>
         <section className="hidden sm:flex">
