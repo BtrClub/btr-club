@@ -9,7 +9,7 @@ import Footer from "../components/footer";
 
 export default function Home() {
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <Head>
         <title>BTR INVESTMENT CLUB</title>
       </Head>

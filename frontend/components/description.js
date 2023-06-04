@@ -10,8 +10,8 @@ export default function Description() {
   return (
     <section className="w-full p-2 flex flex-col items-center py-16">
       <h1>A smarter Investment Club</h1>
-      <section className="max-w-[1240px] m-auto md:grid grid-cols-2 gap-8 items-center mt-10">
-        <section>
+      <section className="xl:w-5/6 md:flex justify-evenly items-center mt-10 ">
+        <section className="w-full flex justify-center">
           <Image
             src={DescriptionImg}
             alt="investment club image"
@@ -19,7 +19,7 @@ export default function Description() {
             height="525"
           />
         </section>
-        <section className="flex flex-col justify-center items-center px-2">
+        <section className="w-full flex flex-col justify-center items-center px-2">
           <h3 className="uppercase text-center text-lg">
             Introducing The BTR Investment Club: A Smarter Investment Approach
           </h3>
@@ -55,7 +55,7 @@ export default function Description() {
           <br />
         </section>
       </section>
-      <section className="max-w-[1000px] m-auto text-center pt-8">
+      <section className="max-w-[1000px] flex flex-col text-center pt-8">
         <h3>The BTR Investment Club: Reaching New Heights Together</h3>
         <br />
         <p>
@@ -86,23 +86,24 @@ export default function Description() {
         </p>
         <br />
         <section className="flex justify-evenly">
-          <section className="w-72">
+          <section className="w-40 md:w-72">
             <Card
               onClick={function noRefCheck() {}}
               setIsSelected={function noRefCheck() {}}
               title="BLACK CARD"
               description="TIER 1"
+              className="bg-white h-60 md:h-full"
             >
               <Image src={Tier1} alt="Tier 1 NFT" className="rounded-3xl p-2" />
             </Card>
           </section>
-          <section className="w-72">
+          <section className="w-40 md:w-72">
             <Card
               onClick={function noRefCheck() {}}
               setIsSelected={function noRefCheck() {}}
               title="MONEY PRINTER"
               description="TIER 2"
-              className="bg-white"
+              className="bg-white h-60 md:h-full"
             >
               <Image src={Tier2} alt="Tier 2 NFT" className="rounded-3xl p-2" />
             </Card>

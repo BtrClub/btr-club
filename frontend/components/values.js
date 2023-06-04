@@ -10,8 +10,8 @@ export default function Values() {
       <p className="text-4xl text-center py-14 pt-20 text-pink-600 underline underline-offset-8">
         Our core values
       </p>
-      <section className="text-white pt-10 grid rid-cols-1 md:grid-cols-3 gap-3">
-        <section className="flex flex-col items-center pb-10">
+      <section className="md:flex text-white pt-10">
+        <section className="md:w-1/3 flex flex-col items-center pb-10">
           <Image src={Ownership} alt="Proposal" width="110" height="110" />
           <p className="pt-2 text-2xl">Ownership</p>
           <p className="pt-4 w-2/3 text-lg text-center">
@@ -20,7 +20,7 @@ export default function Values() {
             ownership in our decisions.
           </p>
         </section>
-        <section className="flex flex-col items-center pb-10">
+        <section className="md:w-1/3 flex flex-col items-center pb-10">
           <Image src={Educational} alt="Proposal" width="110" height="110" />
           <p className="pt-2 text-2xl">Educational</p>
           <p className="pt-4 w-2/3 text-lg text-center">
@@ -29,7 +29,7 @@ export default function Values() {
             more knowledge we have, the bigger achievements.
           </p>
         </section>
-        <section className="flex flex-col items-center pb-10">
+        <section className="md:w-1/3 flex flex-col items-center pb-10">
           <Image src={Urgency} alt="Proposal" width="110" height="110" />
           <p className="pt-2 text-2xl">Urgency</p>
           <p className="pt-4 w-2/3 text-lg text-center">
