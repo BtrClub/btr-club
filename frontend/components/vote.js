@@ -172,34 +172,34 @@ export default function Vote() {
         </section>
       ) : (
         <section>
-          <section className="flex justify-center pb-2 px-10 bg-black border-b border-gray-500">
+          <section className="flex justify-center pb-2 sm:px-10 bg-black border-b border-gray-500">
             <section className="w-2/3 sm:w-2/4 lg:w-1/3 flex content-center justify-evenly">
-              <p className="cursor-pointer hover:text-pink-600 text-lg">
+              <p className="cursor-pointer hover:text-pink-600 text-base sm:text-lg">
                 <Link href="/vote" className="text-pink-600">
                   Proposals
                 </Link>
               </p>
-              <p className="cursor-pointer hover:text-pink-600 text-lg">
+              <p className="cursor-pointer hover:text-pink-600 text-base sm:text-lg">
                 <Link href="/createproposal">Create Proposal</Link>
               </p>
             </section>
           </section>
           <section className="flex flex-col items-center bg-white pt-8 pb-20">
-            <section className="w-2/3">
-              <section className="flex justify-evenly w-full">
-                <section className="w-80 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
+            <section className="sm:w-11/12 lg:w-2/3">
+              <section className="flex flex-col sm:flex-row items-center sm:justify-evenly w-full">
+                <section className="w-64 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly items-center sm:items-start sm:pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
                   <p className="text-gray-100 text-lg">Total Proposals</p>
                   <p className="text-white text-lg font-semibold">
                     {proposalCount} total proposals
                   </p>
                 </section>
-                <section className="w-80 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
+                <section className="w-64 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly items-center sm:items-start sm:pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
                   <p className="text-gray-100 text-lg">Participation</p>
                   <p className="text-white text-lg font-semibold">
                     {voteCount} total votes
                   </p>
                 </section>
-                <section className="w-80 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
+                <section className="w-64 h-28 bg-waves bg-blue-900 flex flex-col justify-evenly items-center sm:items-start sm:pl-4 pb-4 border rounded-md border-gray-200 text-gray-900 shadow-lg">
                   <p className="text-gray-100 text-lg">Active Proposals</p>
                   <p className="text-white text-lg font-semibold">
                     {activeProposals} active proposals
@@ -210,7 +210,7 @@ export default function Vote() {
                 {proposals.map((proposal, i) => {
                   return (
                     <section
-                      className="flex flex-col justify-between w-4/5 h-24 my-4 px-4 py-2 rounded-md shadow-md shadow-gray-200 hover:shadow-lg hover:shadow-gray-300 hover:border-gray-100 hover:border cursor-pointer"
+                      className="flex flex-col justify-between w-screen sm:w-4/5 sm:h-24 my-4 px-4 py-2 rounded-md shadow-md shadow-gray-200 hover:shadow-lg hover:shadow-gray-300 hover:border-gray-100 hover:border cursor-pointer"
                       key={i}
                       onClick={() =>
                         setProposalContext(
