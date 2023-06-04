@@ -4,7 +4,7 @@ export default function TermsAndConditions() {
   return (
     <section className="w-full p-2 flex flex-col items-center pt-28 py-16">
       <h1>Terms & Conditions</h1>
-      <section className="mt-10 px-36">
+      <section className="mt-10 px-6 sm:px-36">
         <p className="mb-4 font-semibold">
           Bigger Than Race Disclaimer / Terms & Conditions of Service and
           Investment.
