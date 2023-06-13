@@ -709,7 +709,7 @@ export default function Learn() {
               </section>
             </section>
             <section className="mt-4">
-              <h4>Portfolio and Performance</h4>
+              <h4>"Portfolio and Performance" section:</h4>
               <section className="text-sm mt-4">
                 <p>
                   At &quot;Bigger Than Race&quot;, we have assembled a diverse
@@ -793,7 +793,7 @@ export default function Learn() {
                     </li>
                     <br />
                     <li>
-                      <span className="font-bold">9.</span> WGreen and
+                      <span className="font-bold">9.</span> Green and
                       Sustainable Blockchain Solutions: We invest in projects
                       that are committed to developing environmentally friendly
                       and sustainable blockchain solutions, reducing the
@@ -812,7 +812,7 @@ export default function Learn() {
                   </ul>
                 </section>
                 <br />
-                <p>Metrics and performance indicators:</p>
+                <p>"Metrics and Performance indicators" section:</p>
                 <br />
                 <p>
                   We track a range of performance metrics and indicators to
@@ -830,9 +830,9 @@ export default function Learn() {
                     </li>
                     <br />
                     <li>
-                      <span className="font-bold">2.</span> MUser adoption: We
-                      look for companies that have a clear value proposition and
-                      a growing user base, as this is a key indicator of
+                      <span className="font-bold">2.</span> Mass user adoption:
+                      We look for companies that have a clear value proposition
+                      and a growing user base, as this is a key indicator of
                       long-term success.
                     </li>
                     <br />
@@ -1056,7 +1056,7 @@ export default function Learn() {
                   the Cryptopia VC before being offered first come first served
                   personal allocations up to $750 per holder in every sale, and
                   strictly limited circulation with only 500 NFTs available.
-                  $525 per NFT. As part of the referral program, Tier 2 offers a
+                  $575 per NFT. As part of the referral program, Tier 2 offers a
                   $40 referral fee for each Special Forces NFT sold.
                 </p>
                 <br />
