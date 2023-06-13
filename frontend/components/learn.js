@@ -41,8 +41,8 @@ export default function Learn() {
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
                     The purpose of the Investment Club is to allow members of
-                    the BTR Investment Club to make a vote on the decisions in
-                    regards to the club.
+                    the BTR Investment Club to vote on decisions in regard to
+                    the club.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -62,13 +62,13 @@ export default function Learn() {
                     How will the BTR Investment Club be governed?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    It will be governed by the community of the BTR investors
-                    and the creators (including Jossif, the Lead Developer,
-                    Sparks Flames and Brando) will not be allowed to vote due
-                    interests of conflict and possible manipulation. They, the
-                    community, will have full control over the voting and
-                    decision-making process. Therefore making the Investment
-                    Club fully decentralized.
+                    It will be governed by the community of BTR investors, and
+                    the creators (including Jossif, the Lead Developer, Sparks
+                    Flames, and Brando) will not be allowed to vote due to
+                    conflicts of interest and possible manipulation. The
+                    community will have full control over the voting and
+                    decision-making process, thereby making the Investment Club
+                    fully decentralized.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -85,15 +85,15 @@ export default function Learn() {
                         clip-rule="evenodd"
                       ></path>
                     </svg>
-                    What project will the BTR Investment Club targeted as
+                    What projects will the BTR Investment Club target for
                     investment?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
                     The investment will consist of projects such as Gala nodes,
-                    Thor nodes, etc. Blockchain projects that bring a passive
+                    Thor nodes, etc. These blockchain projects bring a passive
                     income to the community while supporting the blockchain of
                     that particular company. Of course, it will depend on the
-                    decision made by the BTR investors.
+                    decisions made by the BTR investors.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -113,8 +113,8 @@ export default function Learn() {
                     Will there be voting on projects?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    Yes there will be voting as stated previously, all decisions
-                    are to be made by the BTR investors only.
+                    Yes, there will be voting, as stated previously. All
+                    decisions are to be made by the BTR investors only.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -135,8 +135,8 @@ export default function Learn() {
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
                     Education regarding the Investment Club will be done either
-                    via the BTR YouTube channel and posted in the Patreon for
-                    the members involved or via the Telegram channel via
+                    via the BTR YouTube channel and posted on Patreon for the
+                    members involved or via the Telegram channel through
                     meetings with Brando and Sparks Flames.
                   </p>
                 </section>
@@ -208,7 +208,7 @@ export default function Learn() {
                     The BTR Investment Club takes risk management and due
                     diligence seriously. Before any investment decision is made,
                     thorough research and analysis will be conducted to evaluate
-                    the potential risks and rewards. The club will aim to make
+                    the potential risks and rewards. The club aims to make
                     informed investment choices to protect the interests of its
                     members.
                   </p>
@@ -259,10 +259,10 @@ export default function Learn() {
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
                     The BTR Investment Club is a platform for collective
-                    decision-making, and it does not provide personalized
-                    investment advice or financial recommendations. Members are
-                    encouraged to do their own research and seek professional
-                    advice before making any investment decisions.
+                    decision-making and does not provide personalized investment
+                    advice or financial recommendations. Members are encouraged
+                    to conduct their own research and seek professional advice
+                    before making any investment decisions.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -333,8 +333,9 @@ export default function Learn() {
                     How will the BTR Investment Club investors communicate?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    All communication is to be made via the Telegram group that
-                    was created for Patreon members that pay a monthly fee.
+                    All communication will be made via the Discord group that
+                    was created for NFT Holders that opted-in to the investment
+                    club.
                   </p>
                 </section>
                 <section className="mb-10">
@@ -354,7 +355,7 @@ export default function Learn() {
                     How does support work?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    We&apos;re aware of the importance of well qualified
+                    We&apos;re aware of the importance of well-qualified
                     support, that is why we decided that support will be
                     provided by the members and by the creators.
                   </p>
@@ -380,8 +381,7 @@ export default function Learn() {
                     Will there be regular meetings?
                   </h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    There will be if needed by Brando Murphy to address issues
-                    or make announcements.
+                    There will be regular meetings
                   </p>
                 </section>
                 <section className="mb-10">
