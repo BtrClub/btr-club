@@ -709,7 +709,7 @@ export default function Learn() {
               </section>
             </section>
             <section className="mt-4">
-              <h4>"Portfolio and Performance" section:</h4>
+              <h4>&quot;Portfolio and Performance&quot; section:</h4>
               <section className="text-sm mt-4">
                 <p>
                   At &quot;Bigger Than Race&quot;, we have assembled a diverse
@@ -812,7 +812,7 @@ export default function Learn() {
                   </ul>
                 </section>
                 <br />
-                <p>"Metrics and Performance indicators" section:</p>
+                <p>&quot;Metrics and Performance indicators&quot; section:</p>
                 <br />
                 <p>
                   We track a range of performance metrics and indicators to
