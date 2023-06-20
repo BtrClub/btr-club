@@ -6,6 +6,7 @@ import Values from "../components/values";
 import JoinTheCommunity from "../components/joinTheCommunity";
 import Explainer from "../components/explainer";
 import Footer from "../components/footer";
+import ClaimBar from "../components/claimBar";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <JoinTheCommunity />
       <Explainer />
       <Footer />
+      <ClaimBar />
     </section>
   );
 }
