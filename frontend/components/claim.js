@@ -4,8 +4,29 @@ import { Card } from "@web3uikit/core";
 
 import Tier1 from "../public/assets/tier1.png";
 import Tier2 from "../public/assets/tier2.png";
+import {AIRDROP_ADDRESS, AIRDROP_ABI} from "../constants"
+import { useContract, useSigner } from "wagmi";
 
 export default function Claim() {
+
+   const { data: signer } = useSigner();
+
+  const contract = useContract({
+    address: AIRDROP_ADDRESS,
+    abi: AIRDROP_ABI,
+    signerOrProvider: signer,
+  });
+
+  const claimTierOne = async () => {
+    await contract.sendTierOneDAONFT();
+  };
+
+
+  const claimTierTwo = async () => {
+    await contract.sendTierTwoDAONFT();
+  };
+
+
   return (
     <section className="w-full h-screen text-center">
       <section className="w-full h-full flex flex-col justify-center items-center">
@@ -29,7 +50,10 @@ export default function Claim() {
                   className="rounded-3xl p-2"
                 />
               </Card>
-              <button className="bg-white hover:bg-gray-500 text-black hover:text-white font-bold py-2 px-8 mt-4 rounded cursor-pointer">
+              <button
+                onClick={claimTierOne}
+                className="bg-white hover:bg-gray-500 text-black hover:text-white font-bold py-2 px-8 mt-4 rounded cursor-pointer"
+              >
                 CLAIM
               </button>
             </section>
@@ -50,7 +74,10 @@ export default function Claim() {
                   className="rounded-3xl p-2"
                 />
               </Card>
-              <button className="bg-white hover:bg-gray-500 text-black hover:text-white font-bold py-2 px-8 mt-4 rounded cursor-pointer">
+              <button
+                onClick={claimTierTwo}
+                className="bg-white hover:bg-gray-500 text-black hover:text-white font-bold py-2 px-8 mt-4 rounded cursor-pointer"
+              >
                 CLAIM
               </button>
             </section>

@@ -16,7 +16,7 @@ import { publicProvider } from "wagmi/providers/public";
 import Nav from "../components/nav";
 
 const { chains, provider } = configureChains(
-  [chain.mainnet],
+  [chain.mainnet, chain.polygonMumbai],
   [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
 );
 

@@ -3,9 +3,9 @@ import "@nomicfoundation/hardhat-toolbox";
 require("dotenv").config({ path: ".env" });
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.18",
+  solidity: "0.8.19",
   networks: {
-    sepolia: {
+    mumbai: {
       url: process.env.URL,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],

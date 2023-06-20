@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
 
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.19;
 
 contract BTRDAO {
     error NFT_BALANCE_EMPTY();
@@ -156,15 +156,15 @@ contract BTRDAO {
       BTRProposal storage selectedBTRProposal = btrProposals[index];
       if(vote == Vote.YES) {
         if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 1) > 0) {
-          selectedBTRProposal.votedYes += 100;
-        } else if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 2) > 0) {
           selectedBTRProposal.votedYes += 200;
+        } else if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 2) > 0) {
+          selectedBTRProposal.votedYes += 100;
         }
       } else {
           if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 1) > 0) {
-          selectedBTRProposal.votedNo += 100;
-        } else if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 2) > 0) {
           selectedBTRProposal.votedNo += 200;
+        } else if(IERC1155(bTRNFTAddress).balanceOf(msg.sender, 2) > 0) {
+          selectedBTRProposal.votedNo += 100;
         }
       }
       selectedBTRProposal.totalVotes++;
