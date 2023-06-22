@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAccount, useContract, useSigner } from "wagmi";
-import { ADDRESS, abi } from "../constants";
+import { DAO_ADDRESS, DAO_ABI } from "../constants";
 import { AlertTriangle } from "@web3uikit/icons";
 
 export default function CreateProposal() {
@@ -11,8 +11,8 @@ export default function CreateProposal() {
   const [description, setDescription] = useState("");
 
   const contract = useContract({
-    address: ADDRESS,
-    abi: abi,
+    address: DAO_ADDRESS,
+    abi: DAO_ABI,
     signerOrProvider: signer,
   });
 
