@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useAccount, useContract, useProvider } from "wagmi";
 import { AlertTriangle, Checkmark, CrossCircle } from "@web3uikit/icons";
 import { ethers } from "ethers";
-import { ADDRESS, abi } from "../constants";
+import { DAO_ADDRESS, DAO_ABI } from "../constants";
 import ProposalContext from "./proposalContext.js";
 
 export default function Vote() {
@@ -54,14 +54,15 @@ export default function Vote() {
   };
 
   const contract = useContract({
-    address: ADDRESS,
-    abi: abi,
+    address: DAO_ADDRESS,
+    abi: DAO_ABI,
     signerOrProvider: provider,
   });
 
   const fetchProposalCount = async () => {
     const numProposals = await contract.currentIndex();
     setProposalCount(numProposals.toNumber());
+    console.log(numProposals)
     return numProposals;
   };
 

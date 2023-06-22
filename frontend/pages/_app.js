@@ -17,7 +17,7 @@ import Nav from "../components/nav";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygonMumbai],
-  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+  [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
