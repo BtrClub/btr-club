@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useAccount } from "wagmi";
+import { useAccount, useSigner, useContract } from "wagmi";
 import { AlertTriangle } from "@web3uikit/icons";
 import ProposalContext from "./proposalContext.js";
+import { DAO_ADDRESS, DAO_ABI } from "../constants";
 
 export default function Proposal() {
+  const {data:signer} = useSigner()
   const {
     proposalTitle,
     proposalDescription,
@@ -13,6 +15,7 @@ export default function Proposal() {
     proposalTotalVotes,
     proposalYesVotes,
     proposalNoVotes,
+    proposalIndex
   } = useContext(ProposalContext);
   const { isConnected } = useAccount();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,6 +23,16 @@ export default function Proposal() {
     (proposalYesVotes / proposalTotalVotes) * 100
   );
   const noPercentage = Math.round((proposalNoVotes / proposalTotalVotes) * 100);
+
+  const contract = useContract({
+    address: DAO_ADDRESS,
+    abi: DAO_ABI,
+    signerOrProvider: signer,
+  });
+
+  const voteOnProposal = async(vote, index) => {
+    await contract.voteOnProposal(vote, index)
+  }
 
   useEffect(() => {
     if (!isConnected) {
@@ -109,10 +122,16 @@ export default function Proposal() {
               </section>
               {proposalActive && (
                 <section className="w-full flex flex-col mt-6">
-                  <button className="h-8 text-lg bg-green-600 tracking-wider mb-2 cursor-pointer rounded">
+                  <button
+                    onClick={() => voteOnProposal(0, proposalIndex)}
+                    className="h-8 text-lg bg-green-600 tracking-wider mb-2 cursor-pointer rounded"
+                  >
                     YES
                   </button>
-                  <button className="h-8 text-lg bg-red-600 tracking-wider cursor-pointer rounded">
+                  <button
+                    onClick={() => voteOnProposal(1, proposalIndex)}
+                    className="h-8 text-lg bg-red-600 tracking-wider cursor-pointer rounded"
+                  >
                     NO
                   </button>
                 </section>

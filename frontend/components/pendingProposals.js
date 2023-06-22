@@ -28,6 +28,10 @@ export default function PendingProposals() {
     signerOrProvider: provider,
   });
 
+  const acceptOrDenyProposal = async(acceptProposal, index) => {
+    await contract.acceptOrDenyProposal(acceptProposal, index)
+  }
+
   const fetchProposalCount = async () => {
     const numProposals = await contract.currentIndex();
     setProposalCount(numProposals.toNumber());
@@ -149,10 +153,16 @@ export default function PendingProposals() {
                     Creator: {proposal.owner}
                   </span>
                   <section className="w-full flex flex-col mt-6">
-                    <button className="h-12 text-lg text-white bg-green-600 tracking-wider mb-2 cursor-pointer rounded">
+                    <button
+                      onClick={() => acceptOrDenyProposal(true, i)}
+                      className="h-12 text-lg text-white bg-green-600 tracking-wider mb-2 cursor-pointer rounded"
+                    >
                       APPROVE
                     </button>
-                    <button className="h-12 text-lg text-white bg-red-600 tracking-wider cursor-pointer rounded">
+                    <button
+                      onClick={() => acceptOrDenyProposal(false, i)}
+                      className="h-12 text-lg text-white bg-red-600 tracking-wider cursor-pointer rounded"
+                    >
                       DENY
                     </button>
                   </section>

@@ -16,6 +16,7 @@ export default function Vote() {
     setProposalTotalVotes,
     setProposalYesVotes,
     setProposalNoVotes,
+    setProposalIndex
   } = useContext(ProposalContext);
   const { isConnected } = useAccount();
   const provider = useProvider();
@@ -41,7 +42,8 @@ export default function Vote() {
     proposalActive,
     proposalTotalVotes,
     proposalYesVotes,
-    proposalNoVotes
+    proposalNoVotes,
+    proposalIndex
   ) => {
     setProposalTitle(proposalTitle);
     setProposalDescription(proposalDescription);
@@ -51,6 +53,8 @@ export default function Vote() {
     setProposalTotalVotes(proposalTotalVotes);
     setProposalYesVotes(proposalYesVotes);
     setProposalNoVotes(proposalNoVotes);
+    setProposalIndex(proposalIndex)
+    
   };
 
   const contract = useContract({
@@ -62,7 +66,6 @@ export default function Vote() {
   const fetchProposalCount = async () => {
     const numProposals = await contract.currentIndex();
     setProposalCount(numProposals.toNumber());
-    console.log(numProposals)
     return numProposals;
   };
 
@@ -222,7 +225,8 @@ export default function Vote() {
                           proposal.active,
                           proposal.totalVotes,
                           proposal.yesVotes,
-                          proposal.noVotes
+                          proposal.noVotes,
+                          i
                         )
                       }
                     >

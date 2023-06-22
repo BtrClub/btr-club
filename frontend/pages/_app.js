@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }) {
   const [proposalTotalVotes, setProposalTotalVotes] = useState("");
   const [proposalYesVotes, setProposalYesVotes] = useState("");
   const [proposalNoVotes, setProposalNoVotes] = useState("");
+  const [proposalIndex, setProposalIndex] = useState(0)
 
   return (
     <ProposalContext.Provider
@@ -60,6 +61,8 @@ function MyApp({ Component, pageProps }) {
         setProposalYesVotes,
         proposalNoVotes,
         setProposalNoVotes,
+        proposalIndex,
+        setProposalIndex
       }}
     >
       <WagmiConfig client={wagmiClient}>
