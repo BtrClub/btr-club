@@ -25,7 +25,7 @@ export default function PendingProposals() {
   const contract = useContract({
     address: DAO_ADDRESS,
     abi: DAO_ABI,
-    signerOrProvider: provider,
+    signerOrProvider: signer,
   });
 
   const acceptOrDenyProposal = async(acceptProposal, index) => {
