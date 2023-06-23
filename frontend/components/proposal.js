@@ -120,7 +120,7 @@ export default function Proposal() {
                   </section>
                 )}
               </section>
-              {proposalActive && (
+              {!proposalActive && (
                 <section className="w-full flex flex-col mt-6">
                   <button
                     onClick={() => voteOnProposal(0, proposalIndex)}
