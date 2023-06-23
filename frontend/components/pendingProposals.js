@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { useAccount, useContract, useProvider } from "wagmi";
+import { useAccount, useContract, useSigner } from "wagmi";
 import { AlertTriangle, Checkmark, CrossCircle } from "@web3uikit/icons";
 import { ethers } from "ethers";
 import {DAO_ADDRESS, DAO_ABI } from "../constants";
 
 export default function PendingProposals() {
   const { isConnected } = useAccount();
-  const provider = useProvider();
+  const {data:signer} = useSigner()
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [proposals, setProposals] = useState([]);
   const [proposalCount, setProposalCount] = useState(0);
