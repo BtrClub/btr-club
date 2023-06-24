@@ -1,4 +1,4 @@
-export const DAO_ADDRESS = "0xE7dd9FE98bEaB93725d6a0CE31E747520C85756C";
+export const DAO_ADDRESS = "0xD61eD32D94534DCdec08A9771d349D4cEACC02c1";
 export const DAO_ABI = [
   {
     inputs: [
@@ -10,11 +10,6 @@ export const DAO_ABI = [
       {
         internalType: "address",
         name: "_owner",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_secondOwner",
         type: "address",
       },
     ],
@@ -38,7 +33,7 @@ export const DAO_ABI = [
   },
   {
     inputs: [],
-    name: "HASNT_BEEN_30_DAYS",
+    name: "HASNT_BEEN_14_DAYS",
     type: "error",
   },
   {
@@ -94,6 +89,19 @@ export const DAO_ABI = [
       },
     ],
     name: "acceptOrDenyProposal",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_secondOwner",
+        type: "address",
+      },
+    ],
+    name: "addSecondDAOOwner",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -176,6 +184,24 @@ export const DAO_ABI = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "canCreateAnotherProposal",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "string",
@@ -217,6 +243,25 @@ export const DAO_ABI = [
     name: "executeProposal",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "index",
+        type: "uint256",
+      },
+    ],
+    name: "haveYouVotedThisProposal",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -334,8 +379,7 @@ export const DAO_ABI = [
     type: "receive",
   },
 ];
-
-export const AIRDROP_ADDRESS = "0xFFAB24603DdD65876A7a3aB3f97d431e499434B5";
+export const AIRDROP_ADDRESS = "0x1cB39043fCA826a4F7B041F607770f9ffbf9A977";
 export const AIRDROP_ABI = [
   {
     inputs: [],
@@ -515,7 +559,7 @@ export const AIRDROP_ABI = [
   },
   {
     inputs: [],
-    name: "hasYouClaimedNFT",
+    name: "haveYouClaimedNFT",
     outputs: [
       {
         internalType: "bool",

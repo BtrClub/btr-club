@@ -10,13 +10,13 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
+import { ToastContainer } from "react-toastify";
 import { publicProvider } from "wagmi/providers/public";
 
 import Nav from "../components/nav";
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygonMumbai],
+  [chain.mainnet, chain.sepolia],
   [publicProvider()]
 );
 
@@ -69,6 +69,18 @@ function MyApp({ Component, pageProps }) {
         <RainbowKitProvider theme={darkTheme()} chains={chains}>
           <Nav />
           <Component {...pageProps} />
+           <ToastContainer
+            theme="dark"
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            />
         </RainbowKitProvider>
       </WagmiConfig>
     </ProposalContext.Provider>

@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { useAccount, useContract, useProvider } from "wagmi";
+import { useAccount, useContract, useSigner } from "wagmi";
 import { AlertTriangle, Checkmark, CrossCircle } from "@web3uikit/icons";
 import { ethers } from "ethers";
-import { DAO_ADDRESS, DAO_ABI } from "../constants";
+import {
+  DAO_ADDRESS,
+  DAO_ABI,
+  AIRDROP_ADDRESS,
+  AIRDROP_ABI,
+} from "../constants";
 import ProposalContext from "./proposalContext.js";
 
 export default function Vote() {
@@ -18,13 +23,15 @@ export default function Vote() {
     setProposalNoVotes,
     setProposalIndex
   } = useContext(ProposalContext);
-  const { isConnected } = useAccount();
-  const provider = useProvider();
+  const { isConnected, address } = useAccount();
+  const {data:signer} = useSigner();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [proposals, setProposals] = useState([]);
   const [proposalCount, setProposalCount] = useState(0);
   const [voteCount, setVoteCount] = useState(0);
   const [activeProposals, setActiveProposals] = useState(0);
+  const [daoMember, setDaoMember] = useState(false);
+
 
   useEffect(() => {
     if (!isConnected) {
@@ -60,8 +67,22 @@ export default function Vote() {
   const contract = useContract({
     address: DAO_ADDRESS,
     abi: DAO_ABI,
-    signerOrProvider: provider,
+    signerOrProvider: signer,
   });
+
+  const nftContract = useContract({
+    address: AIRDROP_ADDRESS,
+    abi: AIRDROP_ABI,
+    signerOrProvider: signer,
+  });
+
+  const DaoMember = async () => {
+    const tierOneBalance = await nftContract.balanceOf(address, 1);
+    const tierTwoBalance = await nftContract.balanceOf(address, 2);
+    const member =
+      tierOneBalance.toNumber() > 0 || tierTwoBalance.toNumber() > 0;
+    setDaoMember(member);
+  };
 
   const fetchProposalCount = async () => {
     const numProposals = await contract.currentIndex();
@@ -89,7 +110,7 @@ export default function Vote() {
         validated: String(proposal.proposalAlreadyValidated),
         executed: String(proposal.proposalExecuted),
         yesVotes: proposal.votedYes.toNumber(),
-        noVotes: proposal.votedYes.toNumber(),
+        noVotes: proposal.votedNo.toNumber(),
         totalVotes: proposal.totalVotes.toNumber(),
         deadline: new Date(
           parseInt(proposal.proposalDeadline.toString()) * 1000
@@ -114,7 +135,7 @@ export default function Vote() {
       for (let i = 0; i < numProposals; i++) {
         const proposal = await fetchProposalById(i);
         proposals.push(proposal);
-        if (proposal.active) total = total + 1;
+        if (!proposal.active) total = total + 1;
       }
       setProposals(proposals);
       setActiveProposals(total);
@@ -137,11 +158,12 @@ export default function Vote() {
   useEffect(() => {
     allProposals();
     fetchTotalVotes();
+    DaoMember()
   });
 
   return (
     <section className="pt-28">
-      {!isLoggedIn ? (
+      {!isLoggedIn && daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-full md:w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />
@@ -267,9 +289,15 @@ export default function Vote() {
                             <span className="text-slate-400 mr-2">
                               {proposal.totalVotes} VOTES
                             </span>
-                            <span className="text-slate-700">
-                              ENDS ON {proposal.deadline}
-                            </span>
+                            {proposal.deadline > 0 ? (
+                              <span className="text-slate-700">
+                                ENDS ON {proposal.deadline}
+                              </span>
+                            ) : (
+                              <span className="text-slate-700">
+                                NO DEADLINE SET
+                              </span>
+                            )}
                           </section>
                           <span className="text-slate-400">
                             LEADING:{" "}

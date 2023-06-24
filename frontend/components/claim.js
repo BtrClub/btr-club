@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Card } from "@web3uikit/core";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Tier1 from "../public/assets/tier1.png";
 import Tier2 from "../public/assets/tier2.png";
 import {AIRDROP_ADDRESS, AIRDROP_ABI} from "../constants"
@@ -18,12 +19,86 @@ export default function Claim() {
   });
 
   const claimTierOne = async () => {
-    await contract.sendTierOneDAONFT();
+    const alreadyClaimedNFT = await contract.haveYouClaimedNFT()
+    try {
+      if (alreadyClaimedNFT) {
+       toast.error(
+         "You Have Already Claimed An NFT",
+         {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+         }
+       );
+       return;
+      }
+     const tx = await contract.sendTierOneDAONFT();
+     await tx.wait()
+       toast.success(
+         `You Have Successfully Claimed The Black Card!`,
+         {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+         }
+       );
+    } catch (error) {
+       toast.error(
+         "Transaction Failed, Make Sure You Are Eligible To Receive This And Are Connected To The Right Address",
+         {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: true,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+         }
+       );
+    }
+    
   };
 
 
   const claimTierTwo = async () => {
-    await contract.sendTierTwoDAONFT();
+     const alreadyClaimedNFT = await contract.haveYouClaimedNFT();
+    try {
+      if (alreadyClaimedNFT) {
+        toast.error("You Have Already Claimed An NFT", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      }
+      const tx = await contract.sendTierTwoDAONFT();
+      await tx.wait();
+    } catch (error) {
+      toast.error(
+        "Transaction Failed, Make Sure You Are Eligible To Receive This And Are Connected To The Right Address",
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
+    }
   };
 
 

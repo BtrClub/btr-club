@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
 
 pragma solidity ^0.8.19;
@@ -13,7 +13,7 @@ contract BTRDAO {
     error ALREADY_VOTED();
     error MINIMUM_OF_15_VOTES();
     error NOT_ENOUGH_YES_VOTES();
-    error HASNT_BEEN_30_DAYS();
+    error HASNT_BEEN_14_DAYS();
     error DEADLINE_PASSED();
 
     enum Vote {
@@ -26,10 +26,9 @@ contract BTRDAO {
     address public secondOwner;
     uint public currentIndex;
 
-    constructor(address _btrNFTAddress, address _owner, address _secondOwner) {
+    constructor(address _btrNFTAddress, address _owner) {
        bTRNFTAddress = _btrNFTAddress;
        owner = _owner;
-       secondOwner = _secondOwner;
     }
 
     modifier doYouHoldBTRNFTS {
@@ -90,7 +89,7 @@ contract BTRDAO {
     modifier canProposalBeExecuted(uint index) {
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        bool isSenderAnOwner = (msg.sender == owner || msg.sender == secondOwner);
-       bool hasDeadlinePassed = (selectedBTRProposal.proposalDeadline > block.timestamp && selectedBTRProposal.totalVotes != 100);
+       bool hasDeadlinePassed = (selectedBTRProposal.proposalDeadline > block.timestamp && selectedBTRProposal.totalVotes != 63);
        if(selectedBTRProposal.totalVotes < 15) {
          revert MINIMUM_OF_15_VOTES();
        } 
@@ -104,7 +103,7 @@ contract BTRDAO {
         }
         
         if(hasDeadlinePassed) {
-          revert HASNT_BEEN_30_DAYS();
+          revert HASNT_BEEN_14_DAYS();
         }  
        _;
     }
@@ -140,12 +139,16 @@ contract BTRDAO {
       currentIndex++;
     }
 
+    function addSecondDAOOwner(address _secondOwner) external {
+      if(msg.sender != owner) revert NOT_AN_OWNER();
+      secondOwner = _secondOwner;
+    }
 
     function acceptOrDenyProposal(bool _acceptProposal, uint index) external canProposalBeAccepted(index) {
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        if(_acceptProposal == true) {
         selectedBTRProposal.proposalAccepted = true;
-        selectedBTRProposal.proposalDeadline = block.timestamp + 30 days;
+        selectedBTRProposal.proposalDeadline = block.timestamp + 14 days;
        } else {
         selectedBTRProposal.proposalAccepted = false;
        }
@@ -177,7 +180,16 @@ contract BTRDAO {
        selectedBTRProposal.proposalExecuted = true;
     }
 
-    function withdrawAnyFunds() external {
+    function haveYouVotedThisProposal(uint index) external view returns(bool) {
+      BTRProposal storage selectedBTRProposal = btrProposals[index];
+      return selectedBTRProposal.votedAlready[msg.sender];
+    }
+
+    function canCreateAnotherProposal() external view returns(bool, uint) {
+      return (block.timestamp > timeToCreateAnotherProposal[msg.sender], timeToCreateAnotherProposal[msg.sender]);
+    } 
+
+     function withdrawAnyFunds() external {
       require(address(this).balance > 0, "NO_BALANCE_TO_WITHDRAW");
       require(msg.sender == owner || msg.sender == secondOwner, "NOT_OWNER");
       (bool success, ) = payable(msg.sender).call{value: address(this).balance}("");

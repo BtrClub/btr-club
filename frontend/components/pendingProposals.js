@@ -4,6 +4,8 @@ import { useAccount, useContract, useSigner } from "wagmi";
 import { AlertTriangle, Checkmark, CrossCircle } from "@web3uikit/icons";
 import { ethers } from "ethers";
 import {DAO_ADDRESS, DAO_ABI } from "../constants";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function PendingProposals() {
   const { isConnected } = useAccount();
@@ -29,7 +31,17 @@ export default function PendingProposals() {
   });
 
   const acceptOrDenyProposal = async(acceptProposal, index) => {
-    await contract.acceptOrDenyProposal(acceptProposal, index)
+   const tx = await contract.acceptOrDenyProposal(acceptProposal, index)
+   await tx.wait()
+   toast.success(`You Have Successfully Validated This Proposal`, {
+     position: "top-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+   });
   }
 
   const fetchProposalCount = async () => {
@@ -69,6 +81,7 @@ export default function PendingProposals() {
             parseInt(proposal.proposalDeadline.toString()) * 1000
           ).getTime(),
       };
+      console.log(parsedProposal.validated)
       return parsedProposal;
     } catch (error) {
       console.error(error);
@@ -79,14 +92,17 @@ export default function PendingProposals() {
     try {
       const numProposals = await fetchProposalCount();
       let total = 0;
+      let totalCount = 0;
       const proposals = [];
       for (let i = 0; i < numProposals; i++) {
         const proposal = await fetchProposalById(i);
         proposals.push(proposal);
-        if (proposal.active) total = total + 1;
+        if (!proposal.active) total = total + 1;
+        totalCount = totalCount + proposal.totalVotes
       }
       setProposals(proposals);
       setActiveProposals(total);
+      setVoteCount(totalCount)
       return proposals;
     } catch (error) {
       console.error(error);
@@ -137,38 +153,40 @@ export default function PendingProposals() {
             </section>
           </section>
           <section className="w-full min-h-screen flex flex-col items-center mt-6 py-2">
-            {proposals.map((proposal, i) => {
-              return (
-                <section
-                  className="flex flex-col justify-between w-4/5 h-full my-4 px-4 py-2 rounded-md shadow-md shadow-gray-200 hover:shadow-lg hover:shadow-gray-300 hover:border-gray-100 hover:border"
-                  key={i}
-                >
-                  <span className="text-slate-900 mb-2 text-3xl font-semibold">
-                    {proposal.title}
-                  </span>
-                  <span className="text-slate-900 text-xl">
-                    {proposal.description}
-                  </span>
-                  <span className="text-slate-900 mt-4">
-                    Creator: {proposal.owner}
-                  </span>
-                  <section className="w-full flex flex-col mt-6">
-                    <button
-                      onClick={() => acceptOrDenyProposal(true, i)}
-                      className="h-12 text-lg text-white bg-green-600 tracking-wider mb-2 cursor-pointer rounded"
-                    >
-                      APPROVE
-                    </button>
-                    <button
-                      onClick={() => acceptOrDenyProposal(false, i)}
-                      className="h-12 text-lg text-white bg-red-600 tracking-wider cursor-pointer rounded"
-                    >
-                      DENY
-                    </button>
+            {proposals
+              .filter((proposal) => proposal.validated === "false")
+              .map((proposal, i) => {
+                return (
+                  <section
+                    className="flex flex-col justify-between w-4/5 h-full my-4 px-4 py-2 rounded-md shadow-md shadow-gray-200 hover:shadow-lg hover:shadow-gray-300 hover:border-gray-100 hover:border"
+                    key={i}
+                  >
+                    <span className="text-slate-900 mb-2 text-3xl font-semibold">
+                      {proposal.title}
+                    </span>
+                    <span className="text-slate-900 text-xl">
+                      {proposal.description}
+                    </span>
+                    <span className="text-slate-900 mt-4">
+                      Creator: {proposal.owner}
+                    </span>
+                    <section className="w-full flex flex-col mt-6">
+                      <button
+                        onClick={() => acceptOrDenyProposal(true, i)}
+                        className="h-12 text-lg text-white bg-green-600 tracking-wider mb-2 cursor-pointer rounded"
+                      >
+                        APPROVE
+                      </button>
+                      <button
+                        onClick={() => acceptOrDenyProposal(false, i)}
+                        className="h-12 text-lg text-white bg-red-600 tracking-wider cursor-pointer rounded"
+                      >
+                        DENY
+                      </button>
+                    </section>
                   </section>
-                </section>
-              );
-            })}
+                );
+              })}
           </section>
         </section>
       </section>

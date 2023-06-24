@@ -2,10 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { useAccount, useSigner, useContract } from "wagmi";
 import { AlertTriangle } from "@web3uikit/icons";
 import ProposalContext from "./proposalContext.js";
-import { DAO_ADDRESS, DAO_ABI } from "../constants";
+import { DAO_ADDRESS, DAO_ABI, AIRDROP_ADDRESS, AIRDROP_ABI} from "../constants";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default function Proposal() {
   const {data:signer} = useSigner()
+  const [theyVoted,setTheyVoted] = useState(false)
+  const [daoMember, setDaoMember] = useState(false)
   const {
     proposalTitle,
     proposalDescription,
@@ -17,12 +22,14 @@ export default function Proposal() {
     proposalNoVotes,
     proposalIndex
   } = useContext(ProposalContext);
-  const { isConnected } = useAccount();
+  const { isConnected, address } = useAccount();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const yesPercentage = Math.round(
-    (proposalYesVotes / proposalTotalVotes) * 100
+    (proposalYesVotes / (proposalYesVotes + proposalNoVotes)) * 100
   );
-  const noPercentage = Math.round((proposalNoVotes / proposalTotalVotes) * 100);
+  const noPercentage = Math.round(
+    (proposalNoVotes / (proposalYesVotes + proposalNoVotes)) * 100
+  );
 
   const contract = useContract({
     address: DAO_ADDRESS,
@@ -30,8 +37,37 @@ export default function Proposal() {
     signerOrProvider: signer,
   });
 
+  const nftContract = useContract({
+    address: AIRDROP_ADDRESS,
+    abi: AIRDROP_ABI,
+    signerOrProvider: signer,
+  });
+
+  const DaoMember = async () => {
+    const tierOneBalance = await nftContract.balanceOf(address, 1);
+    const tierTwoBalance = await nftContract.balanceOf(address, 2);
+    const member =
+      tierOneBalance.toNumber() > 0 || tierTwoBalance.toNumber() > 0;
+    setDaoMember(member);
+  };
+
   const voteOnProposal = async(vote, index) => {
-    await contract.voteOnProposal(vote, index)
+   const tx = await contract.voteOnProposal(vote, index)
+   await tx.wait()
+   toast.success(`You Have Successfully Voted On This Proposal!`, {
+     position: "top-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+   });
+  }
+
+  const haveYouVoted = async() => {
+     const haveYouVoted = await contract.haveYouVotedThisProposal(proposalIndex);
+     setTheyVoted(haveYouVoted)
   }
 
   useEffect(() => {
@@ -39,12 +75,14 @@ export default function Proposal() {
       setIsLoggedIn(false);
     } else {
       setIsLoggedIn(true);
+      haveYouVoted()
+      DaoMember()
     }
   }, [isConnected]);
 
   return (
     <section className="py-28">
-      {!isLoggedIn ? (
+      {!isLoggedIn && daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />
@@ -112,7 +150,7 @@ export default function Proposal() {
                 ) : (
                   <section className="flex">
                     <section
-                      className={`w-[${yesPercentage}%] h-4 bg-blue-400`}
+                      className={`w-[${yesPercentage}%] h-4 bg-green-400`}
                     ></section>
                     <section
                       className={`w-[${noPercentage}%] h-4 bg-red-400`}
@@ -120,7 +158,7 @@ export default function Proposal() {
                   </section>
                 )}
               </section>
-              {!proposalActive && (
+              {(!proposalActive && !theyVoted) && (
                 <section className="w-full flex flex-col mt-6">
                   <button
                     onClick={() => voteOnProposal(0, proposalIndex)}

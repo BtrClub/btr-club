@@ -37,7 +37,7 @@ contract Airdrop is ERC1155 {
        alreadyClaimedNFT[msg.sender] = true;
     }
 
-    function hasYouClaimedNFT() external view returns(bool) {
+    function haveYouClaimedNFT() external view returns(bool) {
       return alreadyClaimedNFT[msg.sender];
     }
 }
