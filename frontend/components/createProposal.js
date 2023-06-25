@@ -6,9 +6,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function CreateProposal() {
-  const { isConnected, address } = useAccount();
+  const {  address } = useAccount();
   const { data: signer } = useSigner();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [daoMember, setDaoMember] = useState(false)
@@ -81,17 +80,12 @@ export default function CreateProposal() {
   };
 
   useEffect(() => {
-    if (!isConnected) {
-      setIsLoggedIn(false);
-    } else {
-      setIsLoggedIn(true);
       DaoMember()
-    }
-  }, [isConnected]);
+  });
 
   return (
     <section className="py-28">
-      {!isLoggedIn && daoMember ? (
+      {!daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />

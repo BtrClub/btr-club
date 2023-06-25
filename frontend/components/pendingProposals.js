@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAccount, useContract, useSigner } from "wagmi";
-import { AlertTriangle, Checkmark, CrossCircle } from "@web3uikit/icons";
 import { ethers } from "ethers";
 import {DAO_ADDRESS, DAO_ABI } from "../constants";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ExecutingProposals from "./executingProposals"
 
 export default function PendingProposals() {
   const { isConnected } = useAccount();
@@ -81,7 +81,6 @@ export default function PendingProposals() {
             parseInt(proposal.proposalDeadline.toString()) * 1000
           ).getTime(),
       };
-      console.log(parsedProposal.validated)
       return parsedProposal;
     } catch (error) {
       console.error(error);
@@ -187,6 +186,7 @@ export default function PendingProposals() {
                   </section>
                 );
               })}
+            <ExecutingProposals proposals={proposals}/>
           </section>
         </section>
       </section>

@@ -23,23 +23,15 @@ export default function Vote() {
     setProposalNoVotes,
     setProposalIndex
   } = useContext(ProposalContext);
-  const { isConnected, address } = useAccount();
+  const { address } = useAccount();
   const {data:signer} = useSigner();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [proposals, setProposals] = useState([]);
   const [proposalCount, setProposalCount] = useState(0);
   const [voteCount, setVoteCount] = useState(0);
   const [activeProposals, setActiveProposals] = useState(0);
   const [daoMember, setDaoMember] = useState(false);
-
-
-  useEffect(() => {
-    if (!isConnected) {
-      setIsLoggedIn(false);
-    } else {
-      setIsLoggedIn(true);
-    }
-  }, [isConnected]);
+  const [daoOwner, setDaoOwner] = useState("")
+  const [secondDaoOwner, setSecondDaoOwner] = useState("")
 
   const setProposalContext = (
     proposalTitle,
@@ -83,6 +75,13 @@ export default function Vote() {
       tierOneBalance.toNumber() > 0 || tierTwoBalance.toNumber() > 0;
     setDaoMember(member);
   };
+
+  const fetchDaoOwners = async() => {
+    const daoOwner = await contract.owner();
+    const secondDaoOwner = await contract.secondOwner();
+    setDaoOwner(daoOwner)
+    setSecondDaoOwner(secondDaoOwner)
+  }
 
   const fetchProposalCount = async () => {
     const numProposals = await contract.currentIndex();
@@ -158,12 +157,13 @@ export default function Vote() {
   useEffect(() => {
     allProposals();
     fetchTotalVotes();
-    DaoMember()
+    DaoMember();
+    fetchDaoOwners();
   });
 
   return (
     <section className="pt-28">
-      {!isLoggedIn && daoMember ? (
+      {!daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-full md:w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />
@@ -208,6 +208,11 @@ export default function Vote() {
               <p className="cursor-pointer hover:text-pink-600 text-base sm:text-lg">
                 <Link href="/createproposal">Create Proposal</Link>
               </p>
+              {(address === daoOwner || address === secondDaoOwner) && (
+                <p className="cursor-pointer hover:text-pink-600 text-base sm:text-lg">
+                  <Link href="/pendingproposals">Accept Proposals</Link>
+                </p>
+              )}
             </section>
           </section>
           <section className="flex flex-col items-center bg-white pt-8 pb-20">

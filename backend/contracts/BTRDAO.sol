@@ -1,9 +1,10 @@
 //SPDX-License-Identifier: MIT
 import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 pragma solidity ^0.8.19;
 
-contract BTRDAO {
+contract BTRDAO is Ownable {
     error NFT_BALANCE_EMPTY();
     error CANT_MAKE_PROPOSAL_YET();
     error PROPOSAL_HASNT_BEEN_ACCEPTED();
@@ -22,13 +23,11 @@ contract BTRDAO {
   }
 
     address public bTRNFTAddress;
-    address public owner;
     address public secondOwner;
     uint public currentIndex;
 
-    constructor(address _btrNFTAddress, address _owner) {
+    constructor(address _btrNFTAddress) {
        bTRNFTAddress = _btrNFTAddress;
-       owner = _owner;
     }
 
     modifier doYouHoldBTRNFTS {
@@ -63,6 +62,7 @@ contract BTRDAO {
     }
 
      modifier canProposalBeAccepted(uint index) {
+      address owner = owner();
       BTRProposal storage selectedBTRProposal = btrProposals[index];
       bool isSenderAnOwner = (msg.sender == owner || msg.sender == secondOwner);
         if(selectedBTRProposal.proposalOwner == address(0)) {
@@ -87,6 +87,7 @@ contract BTRDAO {
     }
 
     modifier canProposalBeExecuted(uint index) {
+       address owner = owner();
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        bool isSenderAnOwner = (msg.sender == owner || msg.sender == secondOwner);
        bool hasDeadlinePassed = (selectedBTRProposal.proposalDeadline > block.timestamp && selectedBTRProposal.totalVotes != 63);
@@ -140,6 +141,7 @@ contract BTRDAO {
     }
 
     function addSecondDAOOwner(address _secondOwner) external {
+      address owner = owner();
       if(msg.sender != owner) revert NOT_AN_OWNER();
       secondOwner = _secondOwner;
     }
@@ -190,6 +192,7 @@ contract BTRDAO {
     } 
 
      function withdrawAnyFunds() external {
+       address owner = owner();
       require(address(this).balance > 0, "NO_BALANCE_TO_WITHDRAW");
       require(msg.sender == owner || msg.sender == secondOwner, "NOT_OWNER");
       (bool success, ) = payable(msg.sender).call{value: address(this).balance}("");

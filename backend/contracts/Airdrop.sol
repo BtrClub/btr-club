@@ -2,8 +2,9 @@
 pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Airdrop is ERC1155 {
+contract Airdrop is ERC1155, Ownable {
     error ALREADY_CLAIMED_NFT();
     bool tierOneSent;
     bool tierTwoSent;
@@ -35,6 +36,10 @@ contract Airdrop is ERC1155 {
          }    
        }
        alreadyClaimedNFT[msg.sender] = true;
+    }
+
+    function mintDAONFT(address member, uint id) external onlyOwner {
+      _mint(member, id, 1, "");
     }
 
     function haveYouClaimedNFT() external view returns(bool) {

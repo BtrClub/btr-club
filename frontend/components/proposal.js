@@ -71,18 +71,13 @@ export default function Proposal() {
   }
 
   useEffect(() => {
-    if (!isConnected) {
-      setIsLoggedIn(false);
-    } else {
-      setIsLoggedIn(true);
-      haveYouVoted()
-      DaoMember()
-    }
-  }, [isConnected]);
+    haveYouVoted();
+    DaoMember();
+  });
 
   return (
     <section className="py-28">
-      {!isLoggedIn && daoMember ? (
+      {!daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />
@@ -127,10 +122,6 @@ export default function Proposal() {
                 <span>CREATED BY: </span>
                 <span>{proposalOwner.slice(0, 8)}</span>
               </section>
-              {/* <section className="w-full flex justify-between py-2">
-                <span>CREATED AT: </span>
-                <span>{}</span>
-              </section> */}
               <section className="w-full flex justify-between py-2">
                 <span>ENDS AT: </span>
                 <span>
