@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <section className="overflow-x-hidden">
       <Head>
+        <link rel="shortcut icon" href="/assets/btrLogo.png" />
         <title>BTR INVESTMENT CLUB</title>
       </Head>
       <Main />

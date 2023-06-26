@@ -71,8 +71,7 @@ export default function Vote() {
   const DaoMember = async () => {
     const tierOneBalance = await nftContract.balanceOf(address, 1);
     const tierTwoBalance = await nftContract.balanceOf(address, 2);
-    const member =
-      tierOneBalance.toNumber() > 0 || tierTwoBalance.toNumber() > 0;
+    const member = tierOneBalance.toNumber() > 0 || tierTwoBalance.toNumber() > 0;
     setDaoMember(member);
   };
 

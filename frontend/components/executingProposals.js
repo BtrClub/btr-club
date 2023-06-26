@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { DAO_ADDRESS, DAO_ABI } from "../constants";
+import { DAO_ADDRESS, DAO_ABI, AIRDROP_ABI, AIRDROP_ADDRESS } from "../constants";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContract, useSigner } from "wagmi";
@@ -13,6 +13,12 @@ export default function PendingProposals({proposals}) {
       signerOrProvider: signer
     });
 
+    const nftContract = useContract({
+      address: AIRDROP_ADDRESS,
+      abi: AIRDROP_ABI,
+      signerOrProvider: signer,
+    });
+
  const [minimumVote, setMinimumVote] = useState([])
  const [moreYesVotes, setMoreYesVotes] = useState([])
  const [deadlinePassed, setDeadlinePassed] = useState([])
@@ -20,12 +26,14 @@ export default function PendingProposals({proposals}) {
  const [canBeExecuted, setCanBeExecuted] = useState([])
 
   const proposalStats = async() => {
+    const totalSupply = await nftContract.returnTotalSupply();
+    const possibleTotalVotes = totalSupply.toNumber() > 63 ? totalSupply : 63;
     for (let i = 0; i < proposals.length; i++) {
       const stats = await contract.viewACreatedProposal(i);
       const minimumVotes = stats[7] >= 15
       const moreYesVote = stats[5] > stats[6]
       const deadlinePass = new Date().getTime() > (parseInt(stats[8].toString()) * 1000)
-      const everyMemberVote = stats[7] >= 63
+      const everyMemberVote = stats[7] >= possibleTotalVotes
       setMinimumVote([...minimumVote, minimumVotes])
       setMoreYesVotes([...moreYesVotes, moreYesVote])
       setDeadlinePassed([...deadlinePassed, deadlinePass])

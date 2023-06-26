@@ -9,8 +9,7 @@ async function main() {
 
    const Dao = await ethers.getContractFactory("BTRDAO");
    const dao = await Dao.deploy(
-     airdrop.address,
-     "0xdfb91F19312914495F19401fF806ef5f4DCa3756"
+     airdrop.address
    );
 
    console.log("Dao deployed to:", dao.address);

@@ -16,7 +16,7 @@ import { publicProvider } from "wagmi/providers/public";
 import Nav from "../components/nav";
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.sepolia],
+  [chain.polygon],
   [publicProvider()]
 );
 

@@ -4,6 +4,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 pragma solidity ^0.8.19;
 
+interface IBTRNFT {
+  function returnTotalSupply() external view returns(uint);
+}
+
 contract BTRDAO is Ownable {
     error NFT_BALANCE_EMPTY();
     error CANT_MAKE_PROPOSAL_YET();
@@ -14,7 +18,7 @@ contract BTRDAO is Ownable {
     error ALREADY_VOTED();
     error MINIMUM_OF_15_VOTES();
     error NOT_ENOUGH_YES_VOTES();
-    error HASNT_BEEN_14_DAYS();
+    error HASNT_BEEN_7_DAYS();
     error DEADLINE_PASSED();
 
     enum Vote {
@@ -88,9 +92,11 @@ contract BTRDAO is Ownable {
 
     modifier canProposalBeExecuted(uint index) {
        address owner = owner();
+       uint totalSupply = IBTRNFT(bTRNFTAddress).returnTotalSupply();
+       uint possibleTotalVotes = totalSupply > 63 ? totalSupply : 63;
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        bool isSenderAnOwner = (msg.sender == owner || msg.sender == secondOwner);
-       bool hasDeadlinePassed = (selectedBTRProposal.proposalDeadline > block.timestamp && selectedBTRProposal.totalVotes != 63);
+       bool hasDeadlinePassed = (selectedBTRProposal.proposalDeadline > block.timestamp && selectedBTRProposal.totalVotes != possibleTotalVotes);
        if(selectedBTRProposal.totalVotes < 15) {
          revert MINIMUM_OF_15_VOTES();
        } 
@@ -104,12 +110,10 @@ contract BTRDAO is Ownable {
         }
         
         if(hasDeadlinePassed) {
-          revert HASNT_BEEN_14_DAYS();
+          revert HASNT_BEEN_7_DAYS();
         }  
        _;
     }
-
-    
     
     struct BTRProposal {
       bytes title;
@@ -150,7 +154,7 @@ contract BTRDAO is Ownable {
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        if(_acceptProposal == true) {
         selectedBTRProposal.proposalAccepted = true;
-        selectedBTRProposal.proposalDeadline = block.timestamp + 14 days;
+        selectedBTRProposal.proposalDeadline = block.timestamp + 7 days;
        } else {
         selectedBTRProposal.proposalAccepted = false;
        }

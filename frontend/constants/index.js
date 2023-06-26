@@ -1,15 +1,10 @@
-export const DAO_ADDRESS = "0xD61eD32D94534DCdec08A9771d349D4cEACC02c1";
+export const DAO_ADDRESS = "0x2fE5d8c8c37f638a73C8aaB3dB23FEb3C88b837C";
 export const DAO_ABI = [
   {
     inputs: [
       {
         internalType: "address",
         name: "_btrNFTAddress",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_owner",
         type: "address",
       },
     ],
@@ -33,7 +28,7 @@ export const DAO_ABI = [
   },
   {
     inputs: [],
-    name: "HASNT_BEEN_14_DAYS",
+    name: "HASNT_BEEN_7_DAYS",
     type: "error",
   },
   {
@@ -70,6 +65,25 @@ export const DAO_ABI = [
     inputs: [],
     name: "PROPOSAL_HASNT_BEEN_ACCEPTED",
     type: "error",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
   },
   {
     stateMutability: "payable",
@@ -279,6 +293,13 @@ export const DAO_ABI = [
   },
   {
     inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "secondOwner",
     outputs: [
       {
@@ -288,6 +309,19 @@ export const DAO_ABI = [
       },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -379,7 +413,7 @@ export const DAO_ABI = [
     type: "receive",
   },
 ];
-export const AIRDROP_ADDRESS = "0x1cB39043fCA826a4F7B041F607770f9ffbf9A977";
+export const AIRDROP_ADDRESS = "0xF51d0b23845760d11811a948214aaBb2C0a7ffCe";
 export const AIRDROP_ABI = [
   {
     inputs: [],
@@ -414,6 +448,25 @@ export const AIRDROP_ABI = [
       },
     ],
     name: "ApprovalForAll",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
     type: "event",
   },
   {
@@ -598,6 +651,57 @@ export const AIRDROP_ABI = [
     inputs: [
       {
         internalType: "address",
+        name: "member",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+    ],
+    name: "mintDAONFT",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "returnTotalSupply",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
         name: "from",
         type: "address",
       },
@@ -709,6 +813,19 @@ export const AIRDROP_ABI = [
       },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
