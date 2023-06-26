@@ -1,4 +1,4 @@
-export const DAO_ADDRESS = "0x2fE5d8c8c37f638a73C8aaB3dB23FEb3C88b837C";
+export const DAO_ADDRESS = "0x5Ad0C8df5f6078cB7e7Fa335Ec0Ab001C366bD76";
 export const DAO_ABI = [
   {
     inputs: [
@@ -413,7 +413,7 @@ export const DAO_ABI = [
     type: "receive",
   },
 ];
-export const AIRDROP_ADDRESS = "0xF51d0b23845760d11811a948214aaBb2C0a7ffCe";
+export const AIRDROP_ADDRESS = "0x44AD2Db5Af37B43916F1784D5F9B514b30a32E70";
 export const AIRDROP_ABI = [
   {
     inputs: [],
