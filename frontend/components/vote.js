@@ -162,7 +162,7 @@ export default function Vote() {
 
   return (
     <section className="pt-28">
-      {!daoMember ? (
+      {daoMember ? (
         <section className="min-h-screen flex flex-col items-center mt-8">
           <section className="w-full md:w-2/6 flex justify-between items-center">
             <AlertTriangle fontSize="80px" className="text-red-600" />
@@ -293,7 +293,7 @@ export default function Vote() {
                             <span className="text-slate-400 mr-2">
                               {proposal.totalVotes} VOTES
                             </span>
-                            {proposal.deadline > 0 ? (
+                            {!proposal.active ? (
                               <span className="text-slate-700">
                                 ENDS ON {proposal.deadline}
                               </span>

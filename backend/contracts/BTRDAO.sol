@@ -180,7 +180,6 @@ contract BTRDAO is Ownable {
       selectedBTRProposal.votedAlready[msg.sender] = true;
     }
 
-   //Either anybody from the DAO can execute the proposal or only the owners of the DAO can execute the propoosal
     function executeProposal(uint index) external canProposalBeExecuted(index) {
        BTRProposal storage selectedBTRProposal = btrProposals[index];
        selectedBTRProposal.proposalExecuted = true;
